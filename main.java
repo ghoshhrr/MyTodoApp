@@ -1,19 +1,17 @@
 import java.util.Date;
 
 public class TodoList {
-    // Class to represent a single Todo item with a description and a due date
+    // Class to represent a single Todo item with a description
     class TodoItem {
         String description;
-        Date dueDate;
 
-        public TodoItem(String description, Date dueDate) {
+        public TodoItem(String description) {
             this.description = description;
-            this.dueDate = dueDate;
         }
 
         @Override
         public String toString() {
-            return "Task: " + description + " | Due Date: " + dueDate;
+            return "Task: " + description;
         }
     }
 
@@ -27,7 +25,7 @@ public class TodoList {
         count = 0;
     }
 
-    // Method to add a Todo item
+    // Method to add a Todo item (without due date)
     public void addTodoItem(String description) {
         if (count < todoItems.length) {
             todoItems[count] = new TodoItem(description);
@@ -36,7 +34,7 @@ public class TodoList {
             System.out.println("Todo list is full!");
         }
     }
-    
+
     // Method to display all Todo items
     public void displayTodoItems() {
         for (int i = 0; i < count; i++) {
@@ -51,7 +49,7 @@ public class TodoList {
         // Add some todo items
         myTodoList.addTodoItem("Finish Java assignment");
         myTodoList.addTodoItem("Grocery shopping");
-        
+
         // Display all items
         myTodoList.displayTodoItems();
     }
